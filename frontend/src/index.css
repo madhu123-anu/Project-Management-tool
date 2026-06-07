@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { @apply border-gray-200; }
+  body { @apply bg-gray-50 text-gray-900 font-sans; }
+  .dark body { @apply bg-gray-900 text-gray-100; }
+}
+
+@layer components {
+  .btn-primary { @apply bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-secondary { @apply bg-white text-gray-700 px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors font-medium; }
+  .btn-danger { @apply bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors font-medium; }
+  .input-field { @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white; }
+  .card { @apply bg-white rounded-xl shadow-sm border border-gray-200 dark:bg-gray-800 dark:border-gray-700; }
+  .badge-todo { @apply bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs font-medium; }
+  .badge-in_progress { @apply bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs font-medium; }
+  .badge-review { @apply bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full text-xs font-medium; }
+  .badge-completed { @apply bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-medium; }
+  .priority-low { @apply bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-medium; }
+  .priority-medium { @apply bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full text-xs font-medium; }
+  .priority-high { @apply bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full text-xs font-medium; }
+  .priority-critical { @apply bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-xs font-medium; }
+  .sidebar-link { @apply flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors dark:text-gray-300 dark:hover:bg-gray-700; }
+  .sidebar-link.active { @apply bg-primary-50 text-primary-700 font-medium dark:bg-primary-900/30 dark:text-primary-400; }
+}
+
+.skeleton { @apply animate-pulse bg-gray-200 rounded dark:bg-gray-700; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full dark:bg-gray-600; }

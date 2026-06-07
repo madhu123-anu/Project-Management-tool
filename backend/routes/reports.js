@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const { protect } = require('../middleware/auth');
+const { getProjectReport, getTeamReport, getProductivityReport, getDeadlineReport } = require('../controllers/reportController');
+router.use(protect);
+router.get('/project/:projectId', getProjectReport);
+router.get('/team', getTeamReport);
+router.get('/productivity', getProductivityReport);
+router.get('/deadlines', getDeadlineReport);
+module.exports = router;
