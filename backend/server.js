@@ -25,6 +25,7 @@ const fileRoutes = require('./routes/files');
 const { initSocket } = require('./socket/socketManager');
 
 const app = express();
+app.set('trust proxy', 1);
 const server = http.createServer(app);
 
 const io = socketio(server, {
@@ -50,7 +51,7 @@ const limiter = rateLimit({
 });
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 20,
+  max: 100,
   message: 'Too many auth attempts, please try again later.'
 });
 
